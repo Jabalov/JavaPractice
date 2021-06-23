@@ -9,7 +9,7 @@ public class PyramidCSVDAO implements IPyramidCSVDAO
     List<Pyramid> dataset = new ArrayList<Pyramid>();
     private String path;
     private String header = "";
-    public PyramidCSVDAO(String val) {path = val;}
+    public PyramidCSVDAO(String val) { path = val; }
 
     public String getHeader() { return header; }
 
