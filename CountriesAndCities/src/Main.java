@@ -10,18 +10,23 @@ public class Main
         CountryDAO.readCountriesCSV("dataset/Countries.csv");
         CityDao.readCitiesCSV("dataset/Cities.csv");
 
-        System.out.println("\n A List Of Countries Population: ");
+        System.out.println("\nA List Of Countries Population: ");
         CountryDAO.getCountriesPopulation();
 
-        System.out.println("\n Average Population per Countries: " + CountryDAO.getAveragePopulation());
-        System.out.println("\n Max Country Population: " + CountryDAO.getMaxCountryPopulation());
+        System.out.println("\nAverage Population per Countries: " + CountryDAO.getAveragePopulation());
+        System.out.println("\nMax Country Population: " + CountryDAO.getMaxCountryPopulation());
 
         MappingClass.mappingCountry(CityDao.getCityDataset() ,CountryDAO.getCountryDataset());
-        System.out.println("\n Highest Population City per Country: ");
+        System.out.println("\nHighest Population City per Country: ");
         MappingClass.getHighestPopulationCityOfEachCountry();
 
-        System.out.println("\n Highest Population Capital");
+        System.out.println("\nHighest Population Capital");
         MappingClass.getHighestPopulationCapital(CityDao.getCityDataset() ,CountryDAO.getCountryDataset());
+
+        System.out.println("\nEnter a Country Code: \nSorted City for The Given Key:");
+        Scanner scanner = new Scanner(System.in);
+        String code = scanner.nextLine();
+        MappingClass.getCitiesPopulationSortedForAGivenCode(code);
 
     }
 

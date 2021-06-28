@@ -52,5 +52,15 @@ public class MappingClass
 
         System.out.println(extractedCapitals.stream().filter(c -> c.getCityPopulation() == maxPopulation).toList());
     }
+
+    public static void getCitiesPopulationSortedForAGivenCode(String code)
+    {
+        List<City> cities = countryMap.get(code);
+        cities.stream()
+                .sorted(Comparator.comparingLong(City::getCityPopulation))
+                .toList()
+                .forEach(System.out::println);
+
+    }
 }
 
